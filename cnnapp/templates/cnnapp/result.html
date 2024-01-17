@@ -1,0 +1,32 @@
+{% extends 'cnnapp/base.html' %}
+{% block title %}画像分類結果{% endblock %}
+ 
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">画像分類結果</h4>
+ 
+    <table class='table'>
+        <tbody>
+            <tr>
+                <td>ファイル名</td>
+                <td>{{ pict_name }}</td>
+            </tr>
+            <tr>
+                <td>画像ファイル</td>
+                <td><img class='preview-img' src={{ pict_data }} ></img></td>
+                </tr>
+            <tr>
+                <td>分類名</td>
+                <td>{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td>分類確率</td>
+                <td>{{ rate }} %</td>
+            </tr>
+        </tbody>
+    </table>
+ 
+    <a href = "{% url 'cnnapp:index' %}" class="btn btn-primary">画像指定に戻る</a>
+ 
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'cnnapp/base.html' %}
+{% block title %}画像分類AI{% endblock %}
+ 
+{% block content %}
+<div>
+    <br>
+    <p>画像ファイルを指定し、分類実行ボタンをクリックしてください。</p>
+    <form action="{% url 'cnnapp:predict' %}" method="post" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="custom-file">
+            {{ form.image }}
+            <label class="custom-file-label" for="customFile">
+                ファイル指定
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">分類実行</button>
+    </form> 
+</div>
+{% endblock %}

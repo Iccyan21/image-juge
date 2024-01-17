@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cnnapp/css/style.css' %}">
+    {% bootstrap_javascript jquery='full' %}
+    <title>画像分類AI | {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">画像分類AI</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
